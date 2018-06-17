@@ -1,0 +1,227 @@
+@mixin respond ($media, $max: null) {
+    @if $media == "print" {
+        @media only print {
+            @content;
+        }
+    } @else if $media == "small-down" {
+        @media only screen and (max-width: $medium-breakpoint - 1) {
+            @content;
+        }
+    } @else if $media == "small" {
+        @media only screen and (min-width: $small-breakpoint) and (max-width: $medium-breakpoint - 1) {
+            @content;
+        }
+    } @else if $media == "medium-down" {
+        @media only screen and (max-width: $large-breakpoint - 1) {
+            @content;
+        }
+    } @else if $media == "medium" {
+        @media only screen and (min-width: $medium-breakpoint) and (max-width: $large-breakpoint - 1) {
+            @content;
+        }
+    } @else if $media == "medium-up" {
+        @media only screen and (min-width: $medium-breakpoint) {
+            @content;
+        }
+    } @else if $media == "large-down" {
+        @media only screen and (max-width: $desktop-breakpoint - 1) {
+            @content;
+        }
+    } @else if $media == "large" {
+        @media only screen and (min-width: $large-breakpoint) and (max-width: $desktop-breakpoint - 1) {
+            @content;
+        }
+    } @else if $media == "large-up" {
+        @media only screen and (min-width: $large-breakpoint) {
+            @content;
+        }
+    } @else if $media == "desktop" {
+        @media only screen and (min-width: $desktop-breakpoint) {
+            @content;
+        }
+    } @else if $media == "xxlg" {
+        @media only screen and (min-width: $xxlg-content-breakpoint) {
+            @content;
+        }
+    } @else if type-of($media) == number and $max == null {
+        @media only screen and (min-width: $media) {
+            @content;
+        }
+    } @else if type-of($media) == number and type-of($max) == number {
+        @media only screen and (min-width: $media) and (max-width: $max - 1) {
+            @content;
+        }
+    }
+}
+
+@mixin font_grey-small() {
+  font-family: Roboto;
+  color: $color-grey_middle;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+}
+@mixin font_greystrongbig_Up() {
+  font-family: Roboto;
+  color:  #4b4b4b;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+@mixin font_greystrongmidle_Up() {
+  font-family: Roboto;
+  color:  #4b4b4b;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+@mixin font_greystrongmidle_Up-mob() {
+  font-family: Roboto;
+  color:  $color-grey_strong;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+@mixin font_greylite_(){
+  font-family: Roboto;
+  color:  #4e4e4e;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: none;
+}
+@mixin font_lilac(){
+  font-family: Roboto;
+  font-size: 34px;
+  font-weight: 300;
+  color: $color-lilac;
+}
+@mixin font_pink (){
+  font-family: Roboto;
+  color: $color-pink;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+@mixin font_pink_small(){
+  font-family: Roboto;
+  color: $color-pink;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+@mixin font_greystrongsmall_() {
+  font-family: Roboto;
+  color:  $color-grey_strong;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+@mixin font_whitemidle_(){
+  font-family: Roboto;
+  font-size: 26px;
+  font-weight: 300;
+  color: $color-white;
+}
+@mixin font_white_(){
+  font-family: Roboto;
+  font-size: 34px;
+  font-weight: 300;
+  color: $color-white;
+}
+
+@mixin font_white_mob(){
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 300;
+  color: $color-white;
+}
+@mixin font_whitesmall_mob(){
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 300;
+  color: $color-white;
+}
+@mixin font_whitebig_Up(){
+  font-family: Roboto;
+  font-size: 46px;
+  font-weight: 700;
+  color: $color-white;
+  text-transform: uppercase;
+}
+@mixin font_whitebig_Up-mob(){
+  font-family: Roboto;
+  font-size: 26px;
+  font-weight: 700;
+  color: $color-white;
+  text-transform: uppercase;
+}
+@mixin font_whitestrongmidle_Up(){
+  font-family: Roboto;
+  color:  $color-white;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+@mixin font_whitestrongsmall_Up(){
+  font-family: Roboto;
+  color:  $color-white;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+@mixin font_simple_black(){
+  font-family: Arial;
+  font-size: 12px;
+  line-height: 2;
+  font-weight: 400;
+  color: #4b4b4b;
+}
+@mixin font_white_thin(){
+  font-size: 22px;
+  color: $color-white;
+  font-weight: 300;
+  font-family: Roboto;
+
+}
+@mixin font_lilac_source_mob(){
+  font-size: 18px;
+  font-weight: 400;
+  color: $color-lilac;
+}
+@mixin font_lilac_source(){
+  font-size: 12px;
+  font-weight: 700;
+  color: $color-lilac;
+}
+
+
+
+@mixin btn () {
+  font-family: Roboto;
+  font-size: 14;
+  color: $color-white;
+  background-color: $color-lilac;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  padding: 15px 15px;
+}
+@mixin btn_small () {
+  font-family: Roboto;
+  font-size: 12px;
+  color: $color-white;
+  background-color: $color-lilac;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  padding: 5px 15px;
+  font-weight: 500;
+  }
