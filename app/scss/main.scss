@@ -53,7 +53,6 @@
 .slider{
   position: relative;
   .header-title{
-
   position: absolute;
   width: 100%;
   margin: 0 auto;
@@ -65,6 +64,10 @@
     @include respond(large-down) {
         font-size: 42px;
       }
+      @include respond(medium-down) {
+          font-size: 32px;
+          padding-top: 50px;
+        }
     padding-top: 150px;
     text-transform: uppercase;
     font-family: Roboto;
@@ -73,6 +76,10 @@
   img{
     @include respond(large-down) {
         width: 70%;
+      }
+    @include respond(medium-down) {
+        width: 70%;
+        padding-top: 30px;
       }
     width: 30%;
     padding-top: 60px;
@@ -159,6 +166,10 @@
   }
 }
 .scroll{
+  @include respond(medium-down) {
+      width: 5%;
+      margin-left: -10px;
+    }
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -191,6 +202,9 @@
       justify-content: center;
       align-items: center;
       h2{
+        @include respond(medium-down) {
+            font-size: 52px;
+          }
         color: $black;
         font-size: 76px;
         font-family: Roboto;
@@ -245,6 +259,9 @@
         display: block;
       }
       div{
+        @include respond(large-down) {
+          padding-bottom: 40px;
+          }
         position: relative;
         height: 240px;
         h4{
@@ -292,6 +309,10 @@
       align-items: center;
       float: right;
       h2{
+        @include respond(medium-down) {
+            font-size: 52px;
+            padding-top: 30px;
+          }
         color: $black;
         font-size: 76px;
         font-family: Roboto;
@@ -330,6 +351,10 @@
             width: 300px;
             height: 300px;
           }
+        @include respond(medium-down) {
+          width: 150px;
+          height: 150px;
+          }
         width: 150px;
         height: 150px;
       }
@@ -352,6 +377,10 @@
         @include respond(large-down) {
             width: 150px;
             height: 300px;
+          }
+        @include respond(medium-down) {
+          width: 75px;
+          height: 150px;
           }
         width: 80px;
         height: 150px;
@@ -376,6 +405,10 @@
             width: 300px;
             height: 300px;
           }
+        @include respond(medium-down) {
+          width: 150px;
+          height: 150px;
+          }
         width: 150px;
         height: 150px;
       }
@@ -398,6 +431,10 @@
         @include respond(large-down) {
             width: 300px;
             height: 300px;
+          }
+        @include respond(medium-down) {
+          width: 150px;
+          height: 150px;
           }
         width: 150px;
         height: 150px;
@@ -475,6 +512,9 @@
         justify-content: center;
         width: 50%;
         h2{
+          @include respond(medium-down) {
+              font-size: 52px;
+            }
           font-size: 76px;
           font-family: Roboto;
           text-transform: uppercase;
@@ -653,16 +693,22 @@
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+      img{
+        @include respond(large-down) {
+          width: 40px;
+          height: 40px;
+          }
+      }
     }
     .contact-info{
       @include respond(large-down) {
           height: 200px;
           padding-top: 40px;
         }
-        @include respond(medium-down) {
-          padding-top: 10px;
-          height: 150px;
-          }
+      @include respond(medium-down) {
+        padding-top: 10px;
+        height: 150px;
+        }
       height: 165px;
       width: 100%;
       display: flex;
@@ -671,11 +717,17 @@
       text-align: left;
       padding-top: 80px;
       h2{
+        @include respond(medium-down) {
+          font-size: 16px;
+          }
         text-transform: uppercase;
         font-family: roboto;
         padding-bottom: 5px;
       }
       p{
+        @include respond(medium-down) {
+          font-size: 14px;
+          }
         font-family: roboto;
       }
       .address{
@@ -726,6 +778,9 @@
     width: 40%;
     text-align: left;
     p{
+      @include respond(medium-down) {
+        font-size: 14px;
+        }
       display: block;
       font-family: roboto;
       font-size: 18px;
