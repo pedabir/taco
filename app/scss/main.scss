@@ -12,42 +12,48 @@
 }
 
 .header{
+  @include respond(large-down) {
+      padding: 0 100px;
+    }
   padding: 0 200px;
   height: 100vh;
   margin: 0 auto;
   background-color: $yellow;
   position: relative;
   max-width: 1900px;
-  nav {
-  height: 90px;
-  display: flex;
-  align-items: center;
-  ul{
-   list-style-type: none;
-   display: inline;
-   li{
-     display: inline-block;
-     a{
-       font-family: Roboto;
-       text-decoration: none;
-       padding: 5px 15px;
-       border-radius: 15px;
-       text-transform: uppercase;
-       font-size: 18px;
-       font-weight: 800;
-       color: $black;
-       &:hover{
-         background-color: $black;
-         color: $yellow;
+    nav {
+      @include respond(medium-down) {
+          display: none;
+        }
+    height: 90px;
+    display: flex;
+    align-items: center;
+      ul{
+       list-style-type: none;
+       display: inline;
+        li{
+         display: inline-block;
+           a{
+             font-family: Roboto;
+             text-decoration: none;
+             padding: 5px 15px;
+             border-radius: 15px;
+             text-transform: uppercase;
+             font-size: 18px;
+             font-weight: 800;
+             color: $black;
+             &:hover{
+               background-color: $black;
+               color: $yellow;
+             }
+           }
+         }
        }
      }
-   }
-  }
-}
 .slider{
   position: relative;
   .header-title{
-  // max-width: 1200px;
+
   position: absolute;
   width: 100%;
   margin: 0 auto;
@@ -56,12 +62,18 @@
   flex-direction: column;
   align-items: center;
   h1 {
+    @include respond(large-down) {
+        font-size: 42px;
+      }
     padding-top: 150px;
     text-transform: uppercase;
     font-family: Roboto;
     font-weight: 800;
   }
   img{
+    @include respond(large-down) {
+        width: 70%;
+      }
     width: 30%;
     padding-top: 60px;
     display: block;
@@ -78,15 +90,16 @@
     &:hover{
       background-color: $black;
       color: $yellow;
+      }
     }
-  }
     .btn {
+      @include respond(large-down) {
+          margin-top: 35px;
+        }
     margin-top: 15px;
     font-size: 12px;
     display: block;
     border: 3px solid $black;
-    // padding-left: 5px;
-    // overflow: hidden;
     &:before{
       content: "";
       display: inline-block;
@@ -121,6 +134,9 @@
   margin: 0 auto;
 }
 .slider-item{
+  @include respond(large-down) {
+      display: none;
+    }
     padding: 200px 50px;
     display: flex;
     flex-direction: row;
@@ -151,13 +167,25 @@
 }
 .i-do{
   .wd-head{
+    @include respond(large-down) {
+        padding: 0 100px;
+        height: 400px;
+      }
+      @include respond(medium-down) {
+          padding: 0 20px;
+        }
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 0 200px;
+    flex-wrap: wrap;
     display: flex;
     height: 200px;
     .block_a{
+      @include respond(large-down) {
+          width: 100%;
+          padding-top: 50px;
+        }
       width: 50%;
       display: flex;
       justify-content: center;
@@ -171,6 +199,11 @@
       }
     }
     .block_b{
+      @include respond(large-down) {
+          width: 100%;
+          padding-top: 50px;
+          text-align: center;
+        }
       width: 50%;
       display: flex;
       justify-content: center;
@@ -183,15 +216,27 @@
     }
   }
   .title-items{
+    @include respond(large-down) {
+        margin: 0 100px;
+        height: auto;
+        flex-direction: column;
+      }
+      @include respond(medium-down) {
+          margin: 0 20px;
+        }
     display: flex;
     margin: 0 200px;
     height: 470px;
     flex-direction: row;
     justify-content: space-between;
     .item{
+      @include respond(large-down) {
+          width: 100%;
+        }
       width: 32%;
       text-align: center;
       display: flex;
+      flex-wrap: wrap;
       flex-direction: column;
       justify-content: flex-end;
       img {
@@ -203,6 +248,11 @@
         position: relative;
         height: 240px;
         h4{
+          @include respond(large-down) {
+              font-size: 32px;
+              padding-bottom: 20px;
+            }
+          font-family: Roboto;
           text-transform: uppercase;
         }
         p {
@@ -215,15 +265,27 @@
     }
   }
   .wd-footer {
+    @include respond(large-down) {
+        padding: 0 100px;
+      }
+      @include respond(medium-down) {
+          padding: 0 20px;
+        }
     padding: 0 200px;
     padding-bottom: 150px;
     .block_a{
+      @include respond(large-down) {
+          display: none;
+        }
       width: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     .block_b{
+      @include respond(large-down) {
+        width: 100%;
+        }
       width: 50%;
       display: flex;
       justify-content: center;
@@ -239,12 +301,24 @@
     }
   }
   .i-do_content{
+    @include respond(large-down) {
+        padding-top: 30px;
+        height: auto;
+      }
     height: 300px;
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     .item1{
+      @include respond(large-down) {
+          width: 100%;
+          height: 100vh;
+        }
+        @include respond(medium-down) {
+          width: 100%;
+            height: 60vh;
+          }
       background-color: $purple;
       width: 25%;
       height: auto;
@@ -252,49 +326,91 @@
       justify-content: center;
       align-items: center;
       img {
+        @include respond(large-down) {
+            width: 300px;
+            height: 300px;
+          }
         width: 150px;
         height: 150px;
       }
     }
     .item2{
+      @include respond(large-down) {
+          width: 100%;
+          height: 100vh;
+        }
+        @include respond(medium-down) {
+          width: 100%;
+            height: 60vh;
+          }
       background-color: $grey;
       width: 25%;
       display: flex;
       align-items: center;
       justify-content: center;
       img {
+        @include respond(large-down) {
+            width: 150px;
+            height: 300px;
+          }
         width: 80px;
         height: 150px;
       }
     }
     .item3{
+      @include respond(large-down) {
+          width: 100%;
+          height: 100vh;
+        }
+        @include respond(medium-down) {
+          width: 100%;
+            height: 60vh;
+          }
       width: 25%;
       background-color: $torquoise;
       display: flex;
       align-items: center;
       justify-content: center;
       img {
+        @include respond(large-down) {
+            width: 300px;
+            height: 300px;
+          }
         width: 150px;
         height: 150px;
       }
     }
     .item4{
+      @include respond(large-down) {
+          width: 100%;
+          height: 100vh;
+        }
+        @include respond(medium-down) {
+          width: 100%;
+            height: 60vh;
+          }
       width: 25%;
       background-color: $yellow-lite;
       display: flex;
       justify-content: center;
       align-items: center;
       img {
+        @include respond(large-down) {
+            width: 300px;
+            height: 300px;
+          }
         width: 150px;
         height: 150px;
       }
     }
   }
   .about {
+    @include respond(large-down) {
+        height: auto;
+      }
     text-align: center;
-    padding-top: 50px;
-    margin: 0 60px;
     height: 100vh;
+    padding-top: 40px;
     box-sizing: border-box;
     .btn{
       font-family: Roboto;
@@ -340,11 +456,22 @@
       // }
     }
     .about-me{
+      @include respond(large-down) {
+          margin: 0 100px;
+          flex-direction: column;
+        }
+        @include respond(medium-down) {
+          margin: 0 20px;
+          }
       margin: 0 200px;
       display: flex;
       flex-direction: row;
-      padding-top: 100px;
+      padding-top: 50px;
+      justify-content: space-between;
       .block_a{
+        @include respond(large-down) {
+            width: 100%;
+          }
         justify-content: center;
         width: 50%;
         h2{
@@ -355,15 +482,30 @@
         }
       }
       .block_b {
+        @include respond(large-down) {
+            width: 100%;
+          }
         float: right;
         width: 50%;
         p {
+          @include respond(large-down) {
+              text-align: center;
+              padding-top: 20px;
+            }
           text-align:left;
-
+          font-family: roboto;
         }
       }
     }
     .diagram-block{
+      @include respond(large-down) {
+          margin: 0 100px;
+          flex-direction: column;
+          height: auto;
+        }
+        @include respond(medium-down) {
+          margin: 0 20px;
+          }
       margin: 0 200px;
       padding-top: 100px;
       display: flex;
@@ -382,6 +524,9 @@
         text-transform: uppercase;
       }
       p{
+        @include respond(large-down) {
+            padding-bottom: 100px;
+          }
         padding-top: 25px;
         font-family: Roboto;
         font-size: 16px;
@@ -391,6 +536,14 @@
   }
 }
 .contact-block{
+  @include respond(large-down) {
+      padding: 0 100px;
+      flex-direction: column;
+      height: auto;
+    }
+    @include respond(medium-down) {
+      padding: 0 20px;
+      }
   width: 100%;
   padding: 0 200px;
   height: 100vh;
@@ -398,7 +551,16 @@
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
+  position: relative;
   .submit-form{
+    @include respond(large-down) {
+        width: 100%;
+        text-align: center;
+        padding-top: 50px;
+      }
+      @include respond(medium-down) {
+        padding-top: 10px;
+        }
     width: 40%;
     height: 80%;
     padding-top: 210px;
@@ -410,6 +572,9 @@
       text-transform: uppercase;
     }
     input{
+      @include respond(medium-down) {
+        width: 80%;
+        }
       border: 3px solid $black;
       border-radius: 10px;
       width: 100%;
@@ -418,11 +583,12 @@
       padding-left: 10px;
       outline: none;
       background-color: $yellow;
-      // &::placeholder{
-      //   padding-left: 15px;
-      // }
     }
     textarea{
+      @include respond(medium-down) {
+        width: 80%;
+        margin: 0 auto;;
+        }
       border: 3px solid $black;
       border-radius: 10px;
       width: 100%;
@@ -434,7 +600,7 @@
       display: block;
     }
     div {
-      padding-top: 60px;
+      padding-top: 30px;
       text-align: center;
       width: 100%;
       a{
@@ -456,9 +622,22 @@
     }
   }
   .contacts{
-    width: 40%;
+    @include respond(large-down) {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 50px;
+      }
+    height: 20%;
+    width: 50%;
     text-align: center;
     h1{
+      @include respond(large-down) {
+          padding-top: 50px;
+        }
+        @include respond(medium-down) {
+          font-size: 42px;
+          padding-top: 20px;
+          }
       padding-top: 125px;
       color: $black;
       font-size: 76px;
@@ -467,12 +646,23 @@
       text-transform: uppercase;
     }
     .social{
+      @include respond(large-down) {
+          padding-top: 25px;
+        }
       padding-top: 50px;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
     }
     .contact-info{
+      @include respond(large-down) {
+          height: 200px;
+          padding-top: 40px;
+        }
+        @include respond(medium-down) {
+          padding-top: 10px;
+          height: 150px;
+          }
       height: 165px;
       width: 100%;
       display: flex;
@@ -503,6 +693,73 @@
       .email{
         width: 50%;
         height: 50%;
+      }
+    }
+  }
+}
+.footer{
+  @include respond(large-down) {
+      padding: 0 100px;
+      height: auto;
+      flex-direction: column;
+    }
+    @include respond(medium-down) {
+      padding:  0 20px;
+      }
+  display: flex;
+  height: 20vh;
+  width: 100%;
+  padding: 0 200px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  background-color: $torquoise;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  .copyright{
+    @include respond(large-down) {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 25px;
+      }
+    width: 40%;
+    text-align: left;
+    p{
+      display: block;
+      font-family: roboto;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+  .footer-map{
+    @include respond(large-down) {
+        display: none;
+      }
+    width: 60%;
+    align-items: flex-end;
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-end;
+    ul{
+      list-style-type: none;
+      li{
+        display: inline-block;
+        a{
+          font-family: Roboto;
+          text-decoration: none;
+          padding: 5px 10px;
+          border-radius: 15px;
+          text-transform: uppercase;
+          font-size: 16px;
+          font-weight: 800;
+          color: $black;
+          &:hover{
+            background-color: $black;
+            color: $yellow;
+          }
+        }
       }
     }
   }
