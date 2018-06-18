@@ -7,10 +7,15 @@ body {
 
 .wrapper {
   position: relative;
+  height: 100%;
+  min-height: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
   left: 0;
   transition: .6s; }
+
+.open {
+  left: 200px; }
 
 .header {
   padding: 0 200px;
@@ -22,18 +27,83 @@ body {
   @media only screen and (max-width: 1024px) {
     .header {
       padding: 0 100px; } }
+  @media only screen and (max-width: 767px) {
+    .header {
+      padding: 0 20px; } }
+  .header .icon-menu {
+    display: none; }
+    @media only screen and (max-width: 1024px) {
+      .header .icon-menu {
+        position: absolute;
+        display: block;
+        top: 30px;
+        left: 25px;
+        width: 150px;
+        height: 30px;
+        z-index: 1; } }
+    .header .icon-menu .hamburger {
+      width: 25px;
+      height: 15px;
+      float: left;
+      margin: 6px;
+      position: relative;
+      border-top: 4px solid #000;
+      border-bottom: 4px solid #000; }
+      .header .icon-menu .hamburger:after {
+        content: "";
+        position: absolute;
+        display: block;
+        right: 0;
+        left: 0;
+        top: 5px;
+        height: 4px;
+        background: #000; }
+      .header .icon-menu .hamburger a {
+        float: left;
+        font-family: roboto;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 32px;
+        padding-left: 45px;
+        line-height: 0.5;
+        display: none;
+        color: #000; }
+        @media only screen and (max-width: 1024px) {
+          .header .icon-menu .hamburger a {
+            display: block; } }
   .header nav {
     height: 90px;
     display: flex;
     align-items: center; }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 1024px) {
       .header nav {
-        display: none; } }
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: -200px;
+        background: #000;
+        width: 200px;
+        transition: .6s;
+        z-index: 1;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh; } }
     .header nav ul {
       list-style-type: none;
       display: inline; }
+      @media only screen and (max-width: 1024px) {
+        .header nav ul {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 50px; } }
       .header nav ul li {
         display: inline-block; }
+        @media only screen and (max-width: 1024px) {
+          .header nav ul li {
+            line-height: 4; } }
         .header nav ul li a {
           font-family: Roboto;
           text-decoration: none;
@@ -43,9 +113,19 @@ body {
           font-size: 18px;
           font-weight: 800;
           color: #000; }
+          @media only screen and (max-width: 1024px) {
+            .header nav ul li a {
+              text-align: center;
+              color: #fdd400; } }
           .header nav ul li a:hover {
             background-color: #000;
             color: #fdd400; }
+            @media only screen and (max-width: 1024px) {
+              .header nav ul li a:hover {
+                background-color: #fdd400;
+                color: #000; } }
+  .header .open {
+    left: 0px; }
   .header .slider {
     position: relative; }
     .header .slider .header-title {
@@ -66,11 +146,12 @@ body {
         font-weight: 800; }
         @media only screen and (max-width: 1024px) {
           .header .slider .header-title h1 {
-            font-size: 42px; } }
+            font-size: 42px;
+            padding-top: 400px; } }
         @media only screen and (max-width: 767px) {
           .header .slider .header-title h1 {
-            font-size: 32px;
-            padding-top: 50px; } }
+            font-size: 26px;
+            padding-top: 100px; } }
       .header .slider .header-title img {
         width: 30%;
         padding-top: 60px;
@@ -162,7 +243,8 @@ body {
   padding: 0 200px;
   flex-wrap: wrap;
   display: flex;
-  height: 200px; }
+  height: 200px;
+  justify-content: space-between; }
   @media only screen and (max-width: 1024px) {
     .i-do .wd-head {
       padding: 0 100px;
@@ -171,7 +253,7 @@ body {
     .i-do .wd-head {
       padding: 0 20px; } }
   .i-do .wd-head .block_a {
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center; }
@@ -181,7 +263,7 @@ body {
         padding-top: 50px; } }
     .i-do .wd-head .block_a h2 {
       color: #000;
-      font-size: 76px;
+      font-size: 58px;
       font-family: Roboto;
       font-weight: 800;
       text-transform: uppercase; }
@@ -189,7 +271,7 @@ body {
         .i-do .wd-head .block_a h2 {
           font-size: 52px; } }
   .i-do .wd-head .block_b {
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center; }
@@ -199,7 +281,7 @@ body {
         padding-top: 50px;
         text-align: center; } }
     .i-do .wd-head .block_b p {
-      font-size: 18px;
+      font-size: 14px;
       font-family: Roboto;
       font-weight: 500; }
 
@@ -252,7 +334,9 @@ body {
 
 .i-do .wd-footer {
   padding: 0 200px;
-  padding-bottom: 150px; }
+  padding-top: 50px;
+  box-sizing: border-box;
+  padding-bottom: 100px; }
   @media only screen and (max-width: 1024px) {
     .i-do .wd-footer {
       padding: 0 100px; } }
@@ -260,7 +344,7 @@ body {
     .i-do .wd-footer {
       padding: 0 20px; } }
   .i-do .wd-footer .block_a {
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center; }
@@ -268,7 +352,7 @@ body {
       .i-do .wd-footer .block_a {
         display: none; } }
   .i-do .wd-footer .block_b {
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -278,7 +362,7 @@ body {
         width: 100%; } }
     .i-do .wd-footer .block_b h2 {
       color: #000;
-      font-size: 76px;
+      font-size: 58px;
       font-family: Roboto;
       font-weight: 800;
       text-transform: uppercase; }
@@ -519,7 +603,8 @@ body {
         padding-top: 50px; } }
     @media only screen and (max-width: 767px) {
       .contact-block .submit-form {
-        padding-top: 10px; } }
+        padding-top: 10px;
+        height: auto; } }
     .contact-block .submit-form h4 {
       font-family: Roboto;
       font-size: 18px;
@@ -576,6 +661,7 @@ body {
     @media only screen and (max-width: 1024px) {
       .contact-block .contacts {
         width: 100%;
+        height: auto;
         text-align: center;
         padding-bottom: 50px; } }
     .contact-block .contacts h1 {

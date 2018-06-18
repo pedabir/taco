@@ -12,14 +12,17 @@
 </head>
 <body>
     <div class="wrapper">
-      <div class="header">
-        <nav>
+      <div class="header" id="home">
+        <div class="icon-menu">
+          <div class="hamburger"><a href="">Menu</a></div>
+        </div>
+        <nav class="menu">
           <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">What I do</a></li>
-            <li><a href="">My works</a></li>
-            <li><a href="">about</a></li>
-            <li><a href="">contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#wd-head">What I do</a></li>
+            <li><a href="#wd-footer">My works</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#contact-block">contact</a></li>
           </ul>
         </nav>
         <img class="scroll" src="/img/scroll.png" alt="">
@@ -41,7 +44,7 @@
         </div>
       </div>
       <div class="i-do">
-        <div class="wd-head">
+        <div class="wd-head" id="wd-head">
           <div class="block_a">
             <h2>What i do</h2>
           </div>
@@ -76,7 +79,7 @@
             </div>
           </div>
         </div>
-        <div class="wd-footer">
+        <div class="wd-footer" id="wd-footer">
           <div class="block_a">
             <h2></h2>
           </div>
@@ -98,7 +101,7 @@
             <img src="/img/item4.png" alt="">
           </div>
         </div>
-        <div class="about">
+        <div class="about" id="about">
           <a class="btn" href="">load more</a>
           <div class="about-me">
             <div class="block_a">
@@ -136,7 +139,7 @@
           </div>
         </div>
       </div>
-      <div class="contact-block">
+      <div class="contact-block" id="contact-block">
         <div class="submit-form">
           <h4>name:</h4>
           <input type="text">
@@ -190,8 +193,9 @@
         </div>
       </div>
     </div>
-    <script src="js/slick.js"></script>
-    <script src="js/slider.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/libs.min.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/scroll.js"></script>
 </body>
 </html>

@@ -4,16 +4,22 @@
 
 .wrapper{
   position: relative;
-  // height: 100%;
+  height: 100%;
+  min-height: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
   left:0;
   transition: .6s;
 }
-
+.open {
+    left: 200px;
+  }
 .header{
   @include respond(large-down) {
       padding: 0 100px;
+    }
+  @include respond(medium-down) {
+      padding: 0 20px;
     }
   padding: 0 200px;
   height: 100vh;
@@ -21,35 +27,112 @@
   background-color: $yellow;
   position: relative;
   max-width: 1900px;
-    nav {
-      @include respond(medium-down) {
-          display: none;
+  .icon-menu{
+    @include respond(large-down){
+      position: absolute;
+      display: block;
+      top: 30px;
+      left: 25px;
+      width: 150px;
+      height: 30px;
+      z-index: 1;
+    }
+    display: none;
+    .hamburger {
+    width: 25px;
+    height: 15px;
+    float: left;
+    margin: 6px;
+    position: relative;
+    border-top: 4px solid $black;
+    border-bottom: 4px solid $black;
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      right: 0;
+      left: 0;
+      top: 5px;
+      height: 4px;
+      background: $black;
+    }
+    a{
+      @include respond(large-down){
+        display: block;
+      }
+      float: left;
+      font-family: roboto;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 32px;
+      padding-left: 45px;
+      line-height: 0.5;
+      display: none;
+      color: $black;
+    }
+  }
+  }
+nav {
+    @include respond(large-down) {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: -200px;
+      background: $black;
+      width: 200px;
+      transition: .6s;
+      z-index: 1;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+    }
+  height: 90px;
+  display: flex;
+  align-items: center;
+  ul{
+    @include respond(large-down) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 50px;
+      }
+   list-style-type: none;
+   display: inline;
+    li{
+      @include respond(large-down) {
+        line-height: 4;
+      }
+     display: inline-block;
+      a{
+        @include respond(large-down) {
+          text-align: center;
+          color: $yellow;
         }
-    height: 90px;
-    display: flex;
-    align-items: center;
-      ul{
-       list-style-type: none;
-       display: inline;
-        li{
-         display: inline-block;
-           a{
-             font-family: Roboto;
-             text-decoration: none;
-             padding: 5px 15px;
-             border-radius: 15px;
-             text-transform: uppercase;
-             font-size: 18px;
-             font-weight: 800;
-             color: $black;
-             &:hover{
-               background-color: $black;
-               color: $yellow;
-             }
-           }
+       font-family: Roboto;
+       text-decoration: none;
+       padding: 5px 15px;
+       border-radius: 15px;
+       text-transform: uppercase;
+       font-size: 18px;
+       font-weight: 800;
+       color: $black;
+       &:hover{
+         @include respond(large-down) {
+           background-color: $yellow;
+           color: $black;
          }
+         background-color: $black;
+         color: $yellow;
        }
-     }
+       }
+      }
+    }
+  }
+.open{
+  left: 0px;
+}
 .slider{
   position: relative;
   .header-title{
@@ -63,10 +146,11 @@
   h1 {
     @include respond(large-down) {
         font-size: 42px;
+        padding-top: 400px;
       }
       @include respond(medium-down) {
-          font-size: 32px;
-          padding-top: 50px;
+          font-size: 26px;
+          padding-top: 100px;
         }
     padding-top: 150px;
     text-transform: uppercase;
@@ -192,12 +276,13 @@
     flex-wrap: wrap;
     display: flex;
     height: 200px;
+    justify-content: space-between;
     .block_a{
       @include respond(large-down) {
           width: 100%;
           padding-top: 50px;
         }
-      width: 50%;
+      width: 40%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -206,7 +291,7 @@
             font-size: 52px;
           }
         color: $black;
-        font-size: 76px;
+        font-size: 58px;
         font-family: Roboto;
         font-weight: 800;
         text-transform: uppercase;
@@ -218,12 +303,12 @@
           padding-top: 50px;
           text-align: center;
         }
-      width: 50%;
+      width: 40%;
       display: flex;
       justify-content: center;
       align-items: center;
       p {
-        font-size: 18px;
+        font-size: 14px;
         font-family: Roboto;
         font-weight: 500;
       }
@@ -289,12 +374,14 @@
           padding: 0 20px;
         }
     padding: 0 200px;
-    padding-bottom: 150px;
+    padding-top: 50px;
+    box-sizing: border-box;
+    padding-bottom: 100px;
     .block_a{
       @include respond(large-down) {
           display: none;
         }
-      width: 50%;
+      width: 40%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -303,7 +390,7 @@
       @include respond(large-down) {
         width: 100%;
         }
-      width: 50%;
+      width: 40%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -314,7 +401,7 @@
             padding-top: 30px;
           }
         color: $black;
-        font-size: 76px;
+        font-size: 58px;
         font-family: Roboto;
         font-weight: 800;
         text-transform: uppercase;
@@ -600,6 +687,7 @@
       }
       @include respond(medium-down) {
         padding-top: 10px;
+        height: auto;
         }
     width: 40%;
     height: 80%;
@@ -664,6 +752,7 @@
   .contacts{
     @include respond(large-down) {
         width: 100%;
+        height: auto;
         text-align: center;
         padding-bottom: 50px;
       }
